@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program</title>
+</head>
+
+<style>
+    body{margin-left: 15px;background-color: rgba(156, 233, 207, 0.644);}
+    p   {line-height: 30px;}
+    .code{border: 3px; border-style: solid; border-radius: 10px; width: 450px; padding-left: 10px; padding-right: 10px; padding-top: 10px;padding-bottom: 10px;background-color: aliceblue;}
+    .names{border: 3px; border-style: solid; border-radius: 10px; width: 200px; padding-left: 10px; padding-right: 10px; padding-top: 10px;;background-color: aliceblue; font-style:oblique;}
+    .space{padding-top: 15px; font-style: italic;}
+</style>
+
+<body>
+    
+
+
+<h1>Bubble Sort Program</h1>
+
+<p>This page was created to show off a bit of my c++ Bubble Sort Program.
+    <br>
+    A bubble sort is a sorting algorithm that organizes a list by comparing to values that are next to each other repeatedly until it makes it to the end of the list.
+</p>
+
+<div>
+    <div class="space">The sorting function for the program</div>
+<pre class="code">
+    void sortData(int counter, string name1[], string name2[])
+{
+	bool swap = false;
+	string temp;
+	for (int a = 0; a < counter; a++)
+	{
+		for (int b = 0; b < counter - 1; b++)
+		{
+			if (name1[b] > name1[b + 1])
+			{
+				temp = name1[b];
+				name1[b] = name1[b + 1];
+				name1[b + 1] = temp;
+				swap = true;
+
+				temp = name2[b];
+				name2[b] = name2[b + 1];
+				name2[b + 1] = temp;
+				swap = true;
+			}
+		}
+		if (swap == true)
+			swap = false;
+		else
+			break;
+	}
+}
+</pre>
+</div>
+<p>In the case of this program above, it is comparing a list of names in a different file and depending on the choice the user makes, will sort the list in alphebetical order by first name <strong>or</strong> last name.</p>
+ 
+<div>
+    <div class="space"><em>For Example</em></div>
+        If I have a list of Names such as the list below.
+        <pre class="names">
+        1. Bob Adams
+        2. Luis Sanchez
+        3. Zack Peter
+        4. Kyle Ray
+        5. Marvin Martinez
+        </pre>            
+     
+    <div>If you were to choose choice 1, it would order the list in alphebetical order by first names.</div>
+
+    <div class="space">Choice 1: Ordered by First Name</div>
+    <pre class="names">
+        1. Bob Adams
+        2. Kyle Ray
+        3. Luis Sanchez
+        4. Marvin Martinez
+        5. Zach Peter
+        </pre>
+        <div>Or if you were to go with choice 2 it would list it in alphebetical order by last names.</div>
+    <div class="space">Choice 2: Ordered by Last Name</div>  
+    <pre class="names">
+        1. Adams Bob
+        2. Martinez Marvin
+        3. Peter Zach
+        4. Ray Kyle
+        5. Sanchez Luis
+    </pre>
+
+    <p style="line-height: 18px;">This is done by the variable 'name1[b]' which will hold a hame in it, then 'name1[b + 1]' will hold the name that follows right after 'name1[b]' in the list. <br>
+        The program will then determine wether or not to switch the names places by comparing whether or not 'name1[b]' is greater than 'name1[b + 1]'. <br>
+        
+        If it is determined that 'name1[b]' is greater then the switch wont take place, and the counter will go up making it so that the value of <br>'name1[b+1]' will now be in 'name1[b]' and then the next in line of the list will take its previous place. 
+        <br>
+        If 'name1[b]' is not greater than 'name1[b + 1]' then will skip trying to swap and instead just count the 'counter' up and move on to the next pair in the list.
+
+    </p>
+</div>
+</body>
+
+</html>
