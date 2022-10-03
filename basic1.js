@@ -1,4 +1,4 @@
-//Listener attached to the page this
+//Listener attached to the page 
 
 window.addEventListener("load", init);
 
