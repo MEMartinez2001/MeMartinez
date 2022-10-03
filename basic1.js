@@ -1,4 +1,5 @@
-//Listener attached to the page
+//Listener attached to the page this
+
 window.addEventListener("load", init);
 
 function init()
